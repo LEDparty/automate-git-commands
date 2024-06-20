@@ -17,7 +17,9 @@ read ansr
 #to the repository
 if [[ "$ansr" =~ ^[yY] ]]; then 
     git init
-    git add .
+    # git add .
+    # using -A instead also acknowledges file deletions
+    git add -A
     git commit -m "First commit"
     echo -n "Copy/paste repo URL: "
     read url
