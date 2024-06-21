@@ -27,6 +27,5 @@ Just run <code>lazy.sh</code> from your local repository folder.
 
 # Contributions
 
-The script could still use a way to better manage branches and SSH key generation, but the
-way this works currently, it does everything that a single person using a repository to share
-their software and hacks could want.
+This script could use a way to manage branches, I'm not sure what would need to be done since
+I do not have separate branches for my repositories.
