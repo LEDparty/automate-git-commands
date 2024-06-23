@@ -4,7 +4,7 @@ This script automates the basic commands for adding files and making changes to 
 a github repository. With the way github is currently setup, you probably need to create the 
 repo and get the access token from the website, but lazy commit executes all the git commands
 for you once you have created the folder and files locally to make that part
-a lot less effortless. It updates files all at once and forces pushes in order to ensure that
+much less irritating. It updates files all at once and forces pushes in order to ensure that
 it works.
 
 # Install 
