@@ -25,6 +25,7 @@ if [[ "$ansr" =~ ^[yY] ]]; then
     read url
     git remote add origin "$url"
     git branch -M main
+    ssh-add
     git push -u origin main
 #updates all changes    
 elif [[ "$ansr" =~ ^[Nn] ]]; then
@@ -33,6 +34,7 @@ elif [[ "$ansr" =~ ^[Nn] ]]; then
     echo -n "Enter commit message: "
     read message
     git commit -m "$message"
+    ssh-add
     git push -f
 else
     echo "Incorrect response, next time choose y or n."
