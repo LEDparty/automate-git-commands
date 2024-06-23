@@ -26,7 +26,7 @@ sudo install lazy.sh /usr/local/bin
 Just run <code>lazy.sh</code> from your local repository folder.
 
 If you are working with a branch other than "main", first launch this command to check the
-preferred branch (the current branch):
+preferred branch (the current branch) from your repository folder:
 
 <code>git branch --show-current</code>
 
