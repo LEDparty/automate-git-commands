@@ -33,6 +33,10 @@ elif [[ "$ansr" =~ ^[Nn] ]]; then
     echo -n "Enter commit message: "
     read message
     git commit -m "$message"
+    #force with lease if safer than plain "push -f"
+    #when you are working with teams so it doesn't
+    #interfere with other commits. Comment out line
+    #below and uncomment "push -f" if you need to
     git push --force-with-lease
     # git push -f
 else
