@@ -25,7 +25,24 @@ sudo install lazy.sh /usr/local/bin
 
 Just run <code>lazy.sh</code> from your local repository folder.
 
-# Contributions
+If you are working with a branch other than "main", first launch this command to check the
+preferred branch (the current branch):
 
-This script could use a way to manage branches, I'm not sure what would need to be done since
-I do not have separate branches for my repositories.
+<code>git branch --show-current</code>
+
+Use this to switch to a branch if it already exists:
+
+<code>git switch branch-name</code>
+
+"branch-name" being any name you choose.
+
+You can use any one of these commands to create a branch and make it the preferred branch:
+
+<pre><code>
+git checkout -b branch-name
+git switch -c branch-name
+</pre></code>
+
+Then, when you run <code>lazy.sh</code>, it will automatically recognize the preferred branch
+you are pushing to when you select not to initialize the repository (you can't change branches
+if you have not created an original one like "main" or "master").

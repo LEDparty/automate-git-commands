@@ -33,7 +33,8 @@ elif [[ "$ansr" =~ ^[Nn] ]]; then
     echo -n "Enter commit message: "
     read message
     git commit -m "$message"
-    git push -f
+    git push --force-with-lease
+    # git push -f
 else
     echo "Incorrect response, next time choose y or n."
     exit 1
