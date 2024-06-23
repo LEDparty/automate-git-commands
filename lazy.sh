@@ -28,7 +28,8 @@ if [[ "$ansr" =~ ^[yY] ]]; then
     git push -u origin main
 #updates all changes    
 elif [[ "$ansr" =~ ^[Nn] ]]; then
-    git add .
+    # git add .
+    git add -A
     echo -n "Enter commit message: "
     read message
     git commit -m "$message"
