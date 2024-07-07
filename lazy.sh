@@ -156,5 +156,6 @@ else
     read message
 
     git commit -m "$message"
-    git push --force-with-lease
+    # git push --force-with-lease
+     git push --f
 fi    
