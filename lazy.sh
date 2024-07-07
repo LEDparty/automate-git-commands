@@ -155,6 +155,7 @@ else
     read message
 
     git commit -m "$message"
-    # git push --force-with-lease
-    git push -f
+    git push --force-with-lease
+	# try this if you are having issues
+    # git push -f
 fi    
