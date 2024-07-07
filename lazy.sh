@@ -1,6 +1,5 @@
 #!/bin/bash
 # Script for automating changes made to a repository
-
 #
 #function to set up repo to connect with ssh
 configure_ssh()
@@ -157,5 +156,5 @@ else
 
     git commit -m "$message"
     # git push --force-with-lease
-     git push --f
+    git push -f
 fi    
