@@ -34,9 +34,9 @@ If you want to name your first branch something other than  "main", then do not 
 your repository with this script, or change the script for a new default
 on this line:
 
-<pre><code>
+<code>
 git branch -M main
-</pre></code>
+</code>
 
 If there's already a <code>.git</code> directory and a different preferred branch, then 
 the script will make the changes according to your preferences
