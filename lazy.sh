@@ -1,6 +1,7 @@
 #!/bin/bash
 # Script for automating changes made to a repository
 
+#
 #function to set up repo to connect with ssh
 configure_ssh()
 {
