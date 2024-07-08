@@ -5,7 +5,7 @@ generating ssh keys for your github account, and also configuring your repositor
 via ssh. Without options, it checks to see if you have initialized the current directory,
 and proceeds to commit all your changes if you have. If you have not set up your computer and
 your local repository to use SSH, then you will have to copy a token from the github website
-when making commits (see "Usage" below to change this).
+when making commits (see "Usage" below to change this in the future).
 
 The <code>lazy.sh</code> currently works best for people creating their own repositories, I
 cannot test it in a team or institutional setting. 
