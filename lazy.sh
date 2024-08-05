@@ -15,7 +15,7 @@ configure_ssh()
 
     echo -n "Enter username: "
     read username
-    echo -n "Enter repo name: "
+    echo -n "Enter repo name [without username or url]: "
     read repo
     git remote set-url origin git@github.com:"$username"/"$repo"
     exit 0
