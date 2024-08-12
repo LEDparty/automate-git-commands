@@ -1,5 +1,8 @@
 # About
 
+A working git task automation script when you have a standard configuration setting with
+a name and an email.
+
 This script executes the commands necessary for initializing a reporitory, making commits,
 generating ssh keys for your github account, and also configuring your repository to connect
 via ssh. Without options, it checks to see if you have initialized the current directory,
