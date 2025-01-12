@@ -59,6 +59,8 @@ fi
 # Creates SSH keys and copies public key to clipboard
 if [ "$1" == "--create-keys" ] || [ "$1" == "--create" ]; then
     cd ~
+	echo "This will create a randomly generated SSH keys in your home directory"
+	echo
     echo "Would you like to leave a note to go with your key?"
     echo -n "(people typically use an email address, you can skip this by pressing enter):"
     read comment
@@ -99,7 +101,7 @@ if [ "$1" == "--create-keys" ] || [ "$1" == "--create" ]; then
     #doesn't return to command line until you've completed the process
     echo "Key copied to system clipboard"
     echo "Now, go to settings on GitHub, go to SSH and GPG keys,"
-    echo "New SSH key, wqand paste the key in the box. After you're done, press enter"
+    echo "New SSH key, and paste the key in the box. After you're done, press enter"
     read input
     exit 0
 fi
