@@ -1,60 +1,88 @@
-# About
+The git command line suite offers many tools for publishing
+the code in your software directly from your terminal, allowing you
+to maintain a smooth workflow. However, these tools are not always easy
+to use and understand, and this repository contains a script that automates
+the menial tasks that you need to upload and make changes to your Github
+repository safely.
 
-A working git task automation script when you have a standard configuration setting with
-a name and an email. Normally works when everything set up properly, but may require 
-troublshooting.
+Since git commands have their own error messages, I've decided to simply
+mix them with a few custom ones in the script.
 
-This script executes the commands necessary for initializing a reporitory, making commits,
-generating ssh keys for your github account, and also configuring your repository to connect
-via ssh. Without options, it checks to see if you have initialized the current directory,
-and proceeds to commit all your changes if you have. If you have not set up your computer and
-your local repository to use SSH, then you will have to copy a token from the github website
-when making commits (see "Usage" below to change this in the future).
+# Limitations and Use
 
-The <code>lazy.sh</code> currently works best for people creating their own repositories, I
-cannot test it in a team or institutional setting. 
+You cannot create Github repositories on the website with this script.
+You must do it through the website. 
 
-# Install 
+Also, if you are working with a software development team, and you need
+to coordinate changes with people in a nuanced and functional manner, 
+please ask them what Github tools they are using.
 
-The script should work on linux shells and mac shells alike, but if you are a macbook user,
-you will probably need to omit the "install" command and find a different way to make this
-script part of your path directories:
+```lgu.sh``` commits all the changes you make to repository files all at
+once. By default, it uses your system's text editor to pull up a commit 
+message, so you can leave detailed messages for your changes. However,
+if you want to use a simple one-line commit message, use the ```-m```
+option.
+
+Also, this is not meant for merging or rebasing.
+
+# Features
+
+The script checks to see if you have an SSH key installed in your home
+directory, and exits if you don't:
+
+Use the ```--create``` or ```--create-keys``` to create SSH keys and 
+set up your github account for SSH authentication: the whole process
+is guided. If you don't have a command line tool for copying text
+to a clipboard, then the script will tell you how to install it. It's
+highly recommended that you configure your repository for SSH, but if
+you don't want to, you can choose "no" when prompted about
+SSH configuration, then you can still copy the tokens off of github.
+
+Once a key is created in your home directory, you need to copy and paste
+the key to github, then configure your local repository to sync up with
+your github account during committs. This script automates much of this 
+process (including checking if you have clipboard software for copying
+the key), but you can repeat these processes individually with the
+```--create``` and ```--configure``` options.
+
+This script also checks to see if you have initialized the repository 
+locally and asks if you want to do it before committing files or changes
+to files.
+
+# Installation and Usage
+
+To install, copy these two commands:
 
 <pre><code>
-git clone https://github.com/LEDparty/lazy-commit
-cd lazy-commit
-sudo install lazy.sh /usr/local/bin
-#alternative, not needed if you use install command
-#chmod +x rwg.sh
+git clone https://github.com/LEDparty/local-github-update-script
+cd local-github-update-script
 </pre></code>
 
-# Usage
+It would make no sense to run this script from this folder, so
+give the script full access across your operating system:
 
-Just run <code>lazy.sh</code> from your local repository folder to initialize a repository
-and commit your first files or commit changes to your files. Used this way, the script acts
-out of your working directory.
+<pre><code>
+sudo install lgu.sh /usr/local/bin
+</pre></code>
 
-If you want to name your first branch something other than  "main", then do not initialize
-your repository with this script, or change the script for a new default
-on this line:
+Then, just enter ```lgu.sh``` on the command line to initialize a new 
+reporitory or make changes to an existing one. Options:
 
-<code>git branch -M main</code>
+<pre><code>
+lgu.sh --create-keys or --create:
+create SSH keys in your home directory and copy them to github
 
-If there's already a <code>.git</code> directory and a different preferred branch, then 
-the script will make the changes according to your preferences
-(please report issues if it doesn't).
+lgu.sh --configure-ssh or --configure:
+configure the working directory for SSH changes over github"
 
-In order to set to configure SSH access for your computer (this will save a ton of effort in the
-future if you regularly make github commits), use the <code>lazy.sh --create-keys
-</code> or the <code>lazy.sh --create</code> option to:
+lgu.sh --status:
+shows information about changes you have made to your local
+repository and also displays your git configurations.
 
--generate the needed SSH keys in your home directory
+lgu.sh --message:
+run like normal, but make a short, inline commit message instead
+instead of pulling up your configured text editor during commits.
+</pre></code>
 
--setup your ssh agent to communicate with github
-
--copy the public key to your system/mouse clipboard to add to your github profile.
-
-After that, you will then need to use <code>lazy.sh --configure-ssh</code> or <code>lazy.sh
---configure</code> within your locally stored repositories in order to complete this process.
 
 
