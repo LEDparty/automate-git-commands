@@ -1,7 +1,6 @@
 #!/bin/bash
 # Script for automating changes made to a repository
 
-#TEST
 SCRIPT=$0
 #Allows for flexible script naming
 SCRIPT_NAME=${SCRIPT##*/}
