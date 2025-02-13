@@ -1,12 +1,14 @@
 The git command line suite offers many tools for publishing
 the code in your software directly from your terminal, allowing you
-to maintain a smooth workflow. However, these tools are not always easy
-to use and understand, and this repository contains a script that automates
+to maintain a smooth workflow. However, typing each command can be tedious.
+This repository contains a script that automates
 the menial tasks that you need to upload and make changes to your Github
 repository safely.
 
 Since git commands have their own error messages, I've decided to simply
-mix them with a few custom ones in the script.
+mix them with a few custom ones in the script. Using this script will not
+exempt you from troubleshooting and using git commands by themselves, so
+try and understand what the commands in the script do.
 
 # Limitations and Use
 
