@@ -150,8 +150,11 @@ if ! [ -d ".git" ]; then
 
     if ! [[ "$ansr" =~ ^[yY] || "$ansr" =~ ^[nN] ]]; then
 		echo "Chose answer other than \"y\" or \"yes\". Exiting..."
-        exit 0
-	fi	
+        exit 1
+	elif [[ "$ansr" =~ ^[Nn] ]]; then
+		exit 0
+	fi
+
 	#add if statement for inline message option
 	if [ "$#" -eq 0 ]; then
         git init
