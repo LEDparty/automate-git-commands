@@ -49,7 +49,7 @@ if [ "$#" -eq 1 ]; then
 			error_msg
 			;;
 	esac		
-	elif [ "$#" -gt 1 ]; then
+elif [ "$#" -gt 1 ]; then
 	echo "Only one command line argument at a time allowed."
 	echo
 	error_msg
