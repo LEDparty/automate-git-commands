@@ -148,7 +148,7 @@ if ! [ -d ".git" ]; then
     echo
     read -p "to your github repository? (y/n) " ansr
 
-    if ! [[ "$ansr" =~ ^[yY] ]]; then
+    if ! [[ "$ansr" =~ ^[yY] || "$ansr" =~ ^[nN] ]]; then
 		echo "Chose answer other than \"y\" or \"yes\". Exiting..."
         exit 0
 	fi	
