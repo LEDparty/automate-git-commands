@@ -215,7 +215,7 @@ else
 	fi	
 
     if git remote get-url origin | grep -q "git@github.com"; then
-        git push
+        git push --force-with-lease
 	else	
 		branch_name=$(git symbolic-ref --short HEAD)
 
