@@ -82,7 +82,7 @@ if [ "$1" == "--configure-ssh" ] || [ "$1" == "--configure" ]; then
 	exit 0
 fi
 
-# Creates SSH keys and copies public key to clipboard
+#creates SSH keys and copies public key to clipboard
 if [ "$1" == "--create-keys" ] || [ "$1" == "--create" ]; then
 	cd ~
 	echo "This will create a randomly generated SSH keys in your home directory"
@@ -148,12 +148,12 @@ if ! [ -d ".git" ]; then
 	echo
 	echo "$PWD"
 	echo
-	read -p "to your github repository? (y/n) " ansr
+	read -p "to your github repository? (y/n) " init_ansr
 
-	if ! [[ "$ansr" =~ ^[yY] || "$ansr" =~ ^[nN] ]]; then
+	if ! [[ "$init_ansr" =~ ^[yY] || "$init_ansr" =~ ^[nN] ]]; then
 		echo "Chose answer other than \"y\" or \"yes\". Exiting..."
 		exit 1
-	elif [[ "$ansr" =~ ^[Nn] ]]; then
+	elif [[ "$init" =~ ^[Nn] ]]; then
 		exit 0
 	fi
 
@@ -173,7 +173,7 @@ if ! [ -d ".git" ]; then
 	echo -n "Would you like to configure this repository to use SSH? (y/n)"
 	read ssh_answer
 
-	if [[ "$ssh_answer" =~ ^[yY] ]]; then
+	if [[ "$ssh_ansr" =~ ^[yY] ]]; then
 		echo -n "Enter username: "
 		read username
 		echo -n "Enter repo name [without username or url]: "
@@ -184,7 +184,7 @@ if ! [ -d ".git" ]; then
 		branch_name=$(git symbolic-ref --short HEAD)
 		git push --force-with-lease -u origin "$branch_name"
 		exit 0
-	elif [[ "$ssh_answer" =~ ^[nN] ]]; then
+	elif [[ "$ssh_ansr" =~ ^[nN] ]]; then
 		echo -n "Copy/paste repo URL: "
 		read url
 
@@ -202,12 +202,12 @@ else
 	git status
 	echo
 	echo "Do you want to add the changes to the staging area and commit them to your"
-	read -p "remote repository? (y/n) " update_answer
+	read -p "remote repository? (y/n) " update_ansr
 
-	if ! [[ "$ansr" =~ ^[yY] || "$ansr" =~ ^[nN] ]]; then
-		echo "Chose answer other than \"y\" or \"yes\". Exiting..."
+	if ! [[ "$update_ansr" =~ ^[yY] || "$update_ansr" =~ ^[nN] ]]; then
+		echo "Choose answer other than \"y\" or \"yes\". Exiting..."
 		exit 1
-	elif [[ "$ansr" =~ ^[Nn] ]]; then
+	elif [[ "$ansr_ansr" =~ ^[Nn] ]]; then
 		exit 0
 	fi
 

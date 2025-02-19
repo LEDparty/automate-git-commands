@@ -29,7 +29,7 @@ Also, this is not meant for merging or rebasing.
 
 # Features
 
-The script checks to see if you have an SSH key installed in your home
+The script checks to see if you have a SSH key installed in your home
 directory, and exits if you don't:
 
 Use the ```--create``` or ```--create-keys``` to create SSH keys and 
