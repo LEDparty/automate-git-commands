@@ -153,7 +153,7 @@ if ! [ -d ".git" ]; then
 	if ! [[ "$init_ansr" =~ ^[yY] || "$init_ansr" =~ ^[nN] ]]; then
 		echo "Chose answer other than \"y\" or \"yes\". Exiting..."
 		exit 1
-	elif [[ "$init" =~ ^[Nn] ]]; then
+	elif [[ "$init_ansr" =~ ^[Nn] ]]; then
 		exit 0
 	fi
 
